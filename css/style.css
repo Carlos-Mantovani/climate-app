@@ -16,5 +16,18 @@ body {
 }
 
 #country {
-    height: 18px;
+    height: 25px;
+}
+
+#weather-icon {
+    width: 60px;
+}
+
+#city {
+    font-weight: bold;
+}
+
+#description {
+    font-weight: bold;
+    text-transform: capitalize;
 }
