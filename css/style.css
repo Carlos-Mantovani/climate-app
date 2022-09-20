@@ -31,3 +31,9 @@ body {
     font-weight: bold;
     text-transform: capitalize;
 }
+
+#image-credits {
+    bottom: 0%; 
+    position: fixed; 
+    width: 100%;
+}

@@ -16,6 +16,8 @@ const wind = document.querySelector('#wind span');
 
 const errorMessage = document.querySelector('#error-message');
 
+const imageCredits = document.querySelector('#image-credits');
+
 const body = document.querySelector('body');
 
 const showErrorMessage = () => {
@@ -25,6 +27,7 @@ const showErrorMessage = () => {
 
 const resetBackground = () => {
     body.style.background = 'linear-gradient(180deg, #594cee 0%, #aaeaff 100%)';
+    imageCredits.textContent = '';
 }
 
 const getWeatherData = async (city) => {
@@ -65,10 +68,12 @@ const changeBackground = async (city) => {
     try {
         const data = await getImage(city);
         const image = data.urls.regular;
+        const user = data.user.name;
         body.style.background = 'none';
         body.style.backgroundImage = `url(${image})`;
         body.style.backgroundPosition = 'center';
         body.style.backgroundSize = 'cover';
+        imageCredits.textContent = `Photo by ${user} on Unsplash`;
     }
     catch {
         resetBackground();
