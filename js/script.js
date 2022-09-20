@@ -28,6 +28,7 @@ const showErrorMessage = () => {
 const resetBackground = () => {
     body.style.background = 'linear-gradient(180deg, #594cee 0%, #aaeaff 100%)';
     imageCredits.textContent = '';
+    imageCredits.href = '';
 }
 
 const getWeatherData = async (city) => {
@@ -74,6 +75,7 @@ const changeBackground = async (city) => {
         body.style.backgroundPosition = 'center';
         body.style.backgroundSize = 'cover';
         imageCredits.textContent = `Photo by ${user} on Unsplash`;
+        imageCredits.href = data.user.portfolio_url;
     }
     catch {
         resetBackground();
